@@ -111,10 +111,12 @@
 //     console.log(event.key)
 // })
 
-const handleSubmit=(event)=>{
-    event.preventDefault()
-    console.log("Form submitted")
-}
+// const handleSubmit=(event)=>{
+//     event.preventDefault()
+//     console.log("Form submitted")
+// }
 
-const form=document.querySelector('form')
-form.addEventListener('submit',handleSubmit)
+// const form=document.querySelector('form')
+// form.addEventListener('submit',handleSubmit)
+
+console.log("Updated Code")
