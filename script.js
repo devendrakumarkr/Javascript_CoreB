@@ -119,4 +119,101 @@
 // const form=document.querySelector('form')
 // form.addEventListener('submit',handleSubmit)
 
-console.log("Updated Code")
+// console.log("Updated Code")
+
+// const btn=document.querySelector("button")
+// const div=document.querySelector(".container")
+// const div2=document.querySelector(".outer")
+
+// btn.addEventListener("click",function(){ console.log("button")},true)
+// div.addEventListener("click",function(){ console.log("Div")},true)
+// div2.addEventListener("click",function(){ console.log("Div2")},true)
+
+// debugger
+// console.log(a)
+// // console.log(b)
+
+// var a=78  //part of global scope
+// let b=345  //stored in script scope
+
+// console.log(a)
+// console.log(b)
+
+
+// function print(){
+//     let c=45
+//     console.log(c)
+//     console.log("Inside fn")
+// }
+
+// print()
+// debugger
+// function first(){
+//     second()
+// }
+// function second(){
+//     third()
+// }
+// function third(){
+//     console.trace()
+// }
+// first()
+
+
+// function infinite(){
+//     infinite()
+// }
+// infinite()
+
+
+// console.log(a)
+// console.log(b)
+// console.log(c)
+
+// let a=345
+// var b=567
+
+// let total=100
+
+// function calculate(){
+//     console.log(total)
+//     var total=100
+// }
+// calculate()
+
+
+// console.log("First Line")
+// setTimeout(()=>{
+//     console.log("After 2 sec")
+// },2000)
+// console.log("Second Line")
+
+
+// setTimeout(()=>{
+//     alert("Alert after 3 sec!!")
+// },3*1000)
+
+// const timerId=setInterval(()=>{
+//     console.log("Hello students!")
+// },1000) 
+
+// console.log(timerId)
+// setTimeout(()=>{
+//     clearInterval(timerId)
+// },10*1000)
+
+// let count=1;
+
+// const id=setInterval(()=>{
+//     if(count===10)clearInterval(id)
+//     console.log(count)
+//     count+=1
+// },1000)
+
+
+// console.log("First Line")
+// const id=setTimeout(()=>{
+//     console.log("After 2 sec")
+// },2000)
+// clearTimeout(id)
+// console.log("Second Line")
