@@ -217,3 +217,122 @@
 // },2000)
 // clearTimeout(id)
 // console.log("Second Line")
+
+
+// function print(name){  //callback fn
+//     console.log("Hello studentss!!", name)
+// }
+
+// function greet(num){  //higher order fn
+//     console.log("Welcome to my class!!")
+//     setTimeout(() => {
+//         console.log("Inside SetTimeout")
+//         let firstNAme="Alex"
+//         num(firstNAme)
+//     }, 2000);
+// }
+
+// greet(print)
+
+
+// const input=document.querySelector("#task")
+// const btn=document.querySelector(".btn")
+// const lists=document.querySelector(".list")
+
+// btn.addEventListener('click',(e)=>{
+//     e.preventDefault()
+//     if(input.value===""){
+//         alert("Enter task")
+//         return
+//     }
+//     const li=document.createElement('li')
+//     const deleteButton=document.createElement('button')
+
+//     deleteButton.innerText="Delete"
+//     li.innerText=input.value
+
+//     li.appendChild(deleteButton)
+//     lists.appendChild(li)
+
+//     deleteButton.addEventListener('click',()=>{
+//         lists.removeChild(li)
+//     })
+//     input.value=""
+// })
+
+// const p=new Promise(function(resolve,reject){
+//     setTimeout(()=>{
+//         let done=true;
+//         if(done){
+//             resolve({name:"alex",age:34})
+//         }else{
+//             reject("network issue")
+//         }
+//     },5000)
+// })
+// p.then((data)=>{
+//     console.log("Resolved",data)
+// }).catch((err)=>{
+//     console.log("Rejected",err)
+// }).finally(()=>{
+//     console.log("Finally block")
+// })
+
+function doHomework(){
+    const p=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let done=true;
+            if(done){
+                console.log("Homework is done")
+                resolve("Homework complete")
+            }else{
+                reject("Homework is not done")
+            }
+        },2000)
+    })
+    return p
+}
+
+function eatDinner(){
+    const p=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let done=true;
+            if(done){
+                console.log("Dinner is done")
+                resolve("Dinner complete")
+            }else{
+                reject("Dinner is not done")
+            }
+        },2000)
+    })
+    return p
+}
+
+function goToPlayground(){
+    const p=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            let done=false;
+            if(done){
+                console.log(" Went to the Playground")
+                resolve("Playground Time")
+            }else{
+                reject("Not allowed to play")
+            }
+        },2000)
+    })
+    return p
+}
+
+doHomework().then((data)=>{
+    console.log(data)
+    return eatDinner()
+}).then((data)=>{
+    console.log(data)
+    return goToPlayground()
+}).then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("Go to Sleep")
+})

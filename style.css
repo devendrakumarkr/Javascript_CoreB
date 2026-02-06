@@ -5,3 +5,12 @@
     height: 35px;
     
 }
+
+li{
+    width: 300px;
+    background-color: tan;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 3px;
+}
