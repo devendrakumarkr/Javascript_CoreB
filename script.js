@@ -278,61 +278,191 @@
 //     console.log("Finally block")
 // })
 
-function doHomework(){
-    const p=new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            let done=true;
-            if(done){
-                console.log("Homework is done")
-                resolve("Homework complete")
-            }else{
-                reject("Homework is not done")
-            }
-        },2000)
-    })
-    return p
+// function doHomework(){
+//     const p=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             let done=true;
+//             if(done){
+//                 console.log("Homework is done")
+//                 resolve("Homework complete")
+//             }else{
+//                 reject("Homework is not done")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// function eatDinner(){
+//     const p=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             let done=true;
+//             if(done){
+//                 console.log("Dinner is done")
+//                 resolve("Dinner complete")
+//             }else{
+//                 reject("Dinner is not done")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// function goToPlayground(){
+//     const p=new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             let done=false;
+//             if(done){
+//                 console.log(" Went to the Playground")
+//                 resolve("Playground Time")
+//             }else{
+//                 reject("Not allowed to play")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// doHomework().then((data)=>{
+//     console.log(data)
+//     return eatDinner()
+// }).then((data)=>{
+//     console.log(data)
+//     return goToPlayground()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Go to Sleep")
+// })
+
+
+// console.log("First Line")
+// setTimeout(()=>{
+//    console.log("Inside Timeout") 
+// },0)
+// const p=new Promise((resolve,reject)=>{
+//     resolve()
+// })
+
+// p.then(()=>{
+//     console.log("Inside Promise")
+// }).catch(()=>{
+//     console.log("Inside Catch")
+// })
+// console.log("Last Line")
+
+// const form=document.querySelector("#form")
+// const eventCards=document.querySelector(".event_cards")
+
+// form.addEventListener('submit',(e)=>{
+//     e.preventDefault()
+//     console.log(eventTitle.value)
+//     console.log(eventDate.value)
+//     console.log(category.value)
+//     console.log(description.value)
+//     const card=document.createElement('div')
+//     card.classList.add('event_card')
+//     card.innerHTML=`
+//         <h3>${eventTitle.value}</h3>
+//         <p>${eventDate.value}</p>
+//         <button>${category.value}</button>
+//         <p>${description.value}</p>
+//         <button class="deletebtn">x</button>
+//         `
+//     // eventCards.appendChild(card)  
+//     // const dltButton=document.querySelector('.deletebtn')
+//     // dltButton.addEventListener('click',()=>{
+//     //     card.remove()
+//     // })
+// })
+
+
+// function orderFood(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             console.log("Food Ordered")
+//             resolve("Food Ordered")
+//         },1000)
+//     })
+// }
+
+// function prepareFood(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             console.log("Food Prepared")
+//             resolve("Food Prepared")
+//         },1000)
+//     })
+// }
+
+// function deliverFood(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             console.log("Food Delivered")
+//             resolve("Food Delivered")
+//         },1000)
+//     })
+// }
+
+// async function order(){
+//     const data=await orderFood()
+//     console.log(data)
+//     await prepareFood()
+//     await deliverFood()
+// }
+
+// order()
+
+
+// async function sample(){}
+// console.log(sample())
+
+// orderFood().then((data)=>{
+//     console.log(data)
+//     return prepareFood()
+// }).then((data)=>{
+//     console.log(data)
+//     return deliverFood()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// })
+
+
+// console.log("first line")
+// try{
+//     // let sample=324
+//     // console.log(sample)
+//     let age=19
+//     if(age<18){
+//         //error
+//         throw new Error("Access Denied")
+//     }
+// }catch(error){
+//     console.log(error)
+// }finally{
+//     console.log("finally block")
+// }
+// console.log("last line")
+
+
+async function getData(){
+    try{
+        const response= await fetch("https://dummyjson.com/products/")
+        console.log(response)
+        console.log(response.ok,response.status)
+        if(response.ok===false)throw new Error("Data not found")
+        const data=await response.json()
+        console.log(data)
+        // data.products.forEach((ele)=>{
+        //     console.log(ele.price)
+        // })
+    }catch(error){
+        console.log("Data not found")
+    }
 }
 
-function eatDinner(){
-    const p=new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            let done=true;
-            if(done){
-                console.log("Dinner is done")
-                resolve("Dinner complete")
-            }else{
-                reject("Dinner is not done")
-            }
-        },2000)
-    })
-    return p
-}
-
-function goToPlayground(){
-    const p=new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            let done=false;
-            if(done){
-                console.log(" Went to the Playground")
-                resolve("Playground Time")
-            }else{
-                reject("Not allowed to play")
-            }
-        },2000)
-    })
-    return p
-}
-
-doHomework().then((data)=>{
-    console.log(data)
-    return eatDinner()
-}).then((data)=>{
-    console.log(data)
-    return goToPlayground()
-}).then((data)=>{
-    console.log(data)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("Go to Sleep")
-})
+getData()
