@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import {add,subtract} from './utility'
 import News from './component/Sample'
+import HomePage from './component/HomePage'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <News count={count} setCount={setCount}/>
+      <HomePage/>
     </>
   )
 }
