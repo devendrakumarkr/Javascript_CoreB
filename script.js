@@ -449,20 +449,186 @@
 // console.log("last line")
 
 
-async function getData(){
-    try{
-        const response= await fetch("https://dummyjson.com/products/")
-        console.log(response)
-        console.log(response.ok,response.status)
-        if(response.ok===false)throw new Error("Data not found")
-        const data=await response.json()
-        console.log(data)
-        // data.products.forEach((ele)=>{
-        //     console.log(ele.price)
-        // })
-    }catch(error){
-        console.log("Data not found")
-    }
+// async function getData(){
+//     try{
+//         const response= await  fetch("https://dummyjson.com/products/")
+//         console.log(response)
+//         console.log(response.ok,response.status)
+//         if(response.ok===false)throw new Error("Data not found")
+//         const data=await response.json()
+//         console.log(data)
+//         // data.products.forEach((ele)=>{
+//         //     console.log(ele.price)
+//         // })
+//     }catch(error){
+//         console.log("Data not found")
+//     }
+// }
+
+// getData()
+
+
+// async function sendData(){
+//     try{
+//         const response=await fetch('https://dummyjson.com/products/add', {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify({
+//                 title:"Macbook",
+//                 description:"Macbook Pro",
+//                 price:100000,
+//                 discountPercentage:5,
+//                 rating:4.5,
+//                 stock:5,
+//                 brand:"Apple",
+//             })
+//         })
+
+//         const data=await response.json()
+//         console.log(data)
+//     }catch(error){
+//         console.log("Data not found")
+//     }
+// }
+// sendData()
+
+let obj={
+    title:"Macbook",
+    description:"Macbook Pro",
 }
 
-getData()
+// localStorage.setItem("obj",JSON.stringify(obj))
+// localStorage.setItem("name","Devendra")
+// localStorage.setItem("age",23)
+// console.log(localStorage.getItem("name"))
+// console.log(localStorage.getItem("age"))
+// console.log(JSON.parse(localStorage.getItem("obj")))
+
+
+// localStorage.removeItem("age")
+
+// localStorage.clear()
+
+
+//  sessionStorage.setItem("obj",JSON.stringify(obj))
+// sessionStorage.setItem("name","Devendra")
+// sessionStorage.setItem("age",23)
+// console.log(sessionStorage.getItem("name"))
+// console.log(sessionStorage.getItem("age"))
+// console.log(JSON.parse(sessionStorage.getItem("obj")))
+// sessionStorage.removeItem("age")
+
+
+// document.cookie="name=Devendra; expires=Sat 21 Feb 2026 12:00:00 UTC"
+// document.cookie="age=23; expires=Sat 21 Feb 2026 12:00:00 UTC"
+
+
+// console.log(document.cookie)
+
+
+// async function sample() {
+//     await fetch("http://127.0.0.1:5500/index.html")
+// }
+// sample()
+
+// function* generate(){
+//     // yield 1
+//     // yield 2
+//     // yield 3
+
+//     // for (let index = 1; index < 4; index++) {
+//     //     yield index
+        
+//     // }
+//     let i=1;
+//     while(true){
+//         yield i
+//         i++
+//     }
+// }
+
+// const gen=generate()
+
+// console.log(gen)
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next())
+
+// function add(a,b,c){
+//     return a+b+c
+// }
+
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
+
+// // console.log(add(1)(2)(3)) //first way
+
+// const first=add(1)
+// const second=first(2)
+// const third=second(3)
+// console.log(third)
+// console.log(third)
+
+// const API_KEY="0133cc5316757ac730cc46ae342334e4"
+// const form=document.querySelector("#weather_form")
+// const weatherInfo=document.querySelector(".info")
+// const history=document.querySelector(".history")
+// let historyData=[]
+
+// form.addEventListener('submit',async(e)=>{
+//     e.preventDefault()
+//     const data=city.value
+//     if(data){
+//         getData(data)
+//     }
+
+// })
+
+// async function getData(data){
+//     try{
+//             const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=${API_KEY}`)
+//             const weatherData=await response.json()
+//             if(weatherData.cod===200){
+//                 weatherInfo.innerHTML=`<h3>Weather Info</h3>
+//                 <p>City: ${weatherData.name}</p>
+//                 <p>Temp: ${(weatherData.main.temp-273).toFixed(1)}C</p>
+//                 <p>Weather: ${weatherData.weather[0].main}</p>
+//                 <p>Humidity: ${weatherData.main.humidity}</p>
+//                 <p>Speed: ${weatherData.wind.speed}m/s</p>`
+//             if(historyData.includes(data)===false){
+//                 historyData.push(data)
+//                 localStorage.setItem("history",JSON.stringify(historyData))
+//             }
+//             showHistory()
+//             }else{
+//                 weatherInfo.innerHTML=`<h3>Weather Info</h3><p>City not found</p>`
+//             }
+//         }catch(error){
+//             console.log(error)
+//         }
+// }
+
+// function showHistory(){
+//     history.innerHTML=""
+//     if(localStorage.getItem("history")){
+//         historyData=JSON.parse(localStorage.getItem("history"))
+//         historyData.forEach((ele)=>{
+//             const li=document.createElement("button")
+//             li.textContent=ele
+//             history.appendChild(li)
+//             li.addEventListener('click',()=>{
+//                 getData(ele)
+//             })
+//         })
+//     }
+// }
+
+// showHistory()
+
+console.log(document)
