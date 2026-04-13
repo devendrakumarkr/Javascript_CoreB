@@ -1,8 +1,10 @@
+
 import React,{Component, useState} from 'react'
 import style from '../css/Sample.module.css'
 import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
 import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
 function Sample(props) {
     const [name,setName]=useState("Devendra")
@@ -28,6 +30,14 @@ function Sample(props) {
     <div>
         <Button >First</Button>
         <Button green>Second</Button>
+        <button css={{
+            backgroundColor:"yellow",
+            color:"white",
+            width:"100px",
+            height:"35px",
+            borderRadius:"10px",
+            border:"none"
+        }}>Third</button>
     </div>
     </div>
   )
